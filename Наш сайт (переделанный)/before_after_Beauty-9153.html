@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html class="fullscreen_page sticky_menu">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="img/favico.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="img/apple_icons_57x57.png">
+<link rel="apple-touch-icon" sizes="72x72" href="img/apple_icons_72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="img/apple_icons_114x114.png">
+<title>Misoa Retouching studio</title>
+<link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Roboto:400,300,500,900" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/theme.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/responsive.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/custom.css" type="text/css" media="all" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<body>
+	<header class="main_header">
+        <div class="header_wrapper">
+        	<div class="logo_sect">
+                <a href="index.html" class="logo"><img src="img/logo.png" alt=""  class="logo_def"><img src="img/retina/logo.png" alt="" class="logo_retina"></a>
+                <div class="slogan">Retouching studio</div>
+            </div>                       
+            <div class="header_rp">
+                <nav>
+                    <div class="menu-main-menu-container">
+                    	<ul id="menu-main-menu" class="menu">
+                            <li><a href="portfolio_masonry.html"><span>Portfolio</span></a></li>
+							<li class="current-menu-item"><a href="before_after.html"><span>Before/After</span></a></li>
+							<li><a href="about.html"><span>About</span></a></li>
+                            <li><a href="mailto:mail@misoaretouching.com?subject=Contact from site"><span>Contact us</span></a></li>
+                        </ul>
+                    </div>
+                </nav>            
+            </div>
+            <div class="clear"></div>
+        </div>
+    </header>
+    
+    <div class="fw_content_wrapper">
+		<div class="fw_content_padding">
+            <div class="content_wrapper noTitle">
+                <div class="container">
+                    <div class="content_block row no-sidebar">
+                        <div class="fl-container ">
+                            <div class="row">
+                                <div class="posts-block ">                                                    
+                                    <div class="contentarea">
+                                        <div class="row">
+                                        	<div class="span9 first-module module_number_1 module_cont pb0 module_before_after">
+                                                <div class="before-after" style="max-width:669px;">
+                                                    <div class="beforeAfter_wrapper after_img" style="background-image:url(img/imgs/130722-Beauty-9153_retouched_cs.jpg); max-width:669px;">
+                                                        <img src="img/imgs/130722-Beauty-9153_before_cs.jpg" class="img_before" alt="">
+                                                        <div class="after_wrapper before_img" style="background-image:url(img/imgs/130722-Beauty-9153_before_cs.jpg);" ></div>
+                                                        <div class="result_line"></div>
+                                                    </div>
+                                                </div>
+                                            </div><!-- .module_cont -->
+                                            <div class="span3 module_number_2 module_cont pb0 module_text_area">
+                                                <div class="module_content">
+                                                    <p><a href="before_after_Beauty-9234.html">NEXT -></a></p>                   	
+                                                </div>                                
+                                            </div><!-- .module_cont -->
+                                        </div>
+                                       <!--sample2 -->
+                                       
+                                       <!--end of sample2-->
+                                    </div>
+                            	</div>
+                        	</div>
+                    	</div>
+                	</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    	
+	<div class="fixed_bg bg1"></div>		
+	       
+	<div class="content_bg"></div>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>    
+    <script type="text/javascript" src="js/modules.js"></script>
+	<script type="text/javascript" src="js/theme.js"></script>   
+    <script>
+		jQuery(document).ready(function($) {
+			"use strict";			
+			centerWindow();
+			if (window_w > 760) {
+				jQuery('html').addClass('without_border');
+			}
+			
+			jQuery('.beforeAfter_wrapper').each(function(){
+				var after_wrapper  = jQuery(this).find('.after_wrapper');
+				var before_wrapper  = jQuery(this);
+				var result_line = jQuery(this).find('.result_line');
+				after_wrapper.width(before_wrapper.width()/2);
+				result_line.css('left', (before_wrapper.width()/2)+'px');
+			});
+			jQuery('.beforeAfter_wrapper').mousemove(function(e){
+				var correction = jQuery(this).offset().left,
+					page_x = e.pageX-correction,
+					after_wrapper  = jQuery(this).find('.after_wrapper'),
+					result_line = jQuery(this).find('.result_line');
+				after_wrapper.width(page_x);
+				result_line.css('left', page_x+'px');
+			});	
+						
+			// Init touch on iPad, iPhone, iPod, Android
+			jQuery('.beforeAfter_wrapper').FingerScroll();
+		});
+
+		jQuery(window).load(function() {
+			"use strict";			
+			centerWindow();			
+			jQuery('.beforeAfter_wrapper').each(function(){
+				var after_wrapper  = jQuery(this).find('.after_wrapper');
+				var before_wrapper  = jQuery(this);
+				var result_line = jQuery(this).find('.result_line');
+				after_wrapper.width(before_wrapper.width()/2);
+				result_line.css('left', (before_wrapper.width()/2)+'px');
+			});
+		});
+		
+		jQuery(window).resize(function(){			
+			"use strict";
+			centerWindow();
+			setTimeout('centerWindow()',500);
+			setTimeout('centerWindow()',1000);
+		});
+		
+		function centerWindow() {
+			"use strict";
+			var setTop = (window_h - jQuery('.fw_content_wrapper').height() - header.height())/2+header.height();
+			if (setTop < header.height()+50) {
+				jQuery('.fw_content_wrapper').addClass('fixed');
+				jQuery('body').addClass('addPadding');
+				jQuery('.fw_content_wrapper').css('top', header.height()+50+'px');
+			} else {
+				jQuery('.fw_content_wrapper').css('top', setTop +'px');
+				jQuery('.fw_content_wrapper').removeClass('fixed');
+				jQuery('body').removeClass('addPadding');
+			}
+		}
+
+		jQuery.fn.FingerScroll = function() {
+			"use strict";
+			var scrollStartPos = 0,
+			correction = jQuery(this).offset().left,
+			page_x = 0,
+			after_wrapper  = jQuery(this).find('.after_wrapper'),
+			result_line = jQuery(this).find('.result_line');
+			
+			jQuery(this).bind('touchstart', function(event) {
+				var e = event.originalEvent;
+				scrollStartPos = jQuery(this).scrollTop() + e.touches[0].pageY;
+			});
+			jQuery(this).bind('touchmove', function(event) {									   
+				var e = event.originalEvent;
+				correction = jQuery(this).offset().left;
+				page_x = e.touches[0].pageX-correction;
+
+				after_wrapper.width(page_x);
+				result_line.css('left', page_x+'px');
+				e.preventDefault();
+			});
+			return this;
+		};			
+	</script>
+</body>
+</html>

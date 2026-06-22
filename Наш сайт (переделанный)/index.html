@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html class="fullscreen_page sticky_menu">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="img/favico.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="img/apple_icons_57x57.png">
+<link rel="apple-touch-icon" sizes="72x72" href="img/apple_icons_72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="img/apple_icons_114x114.png">
+<title>Misoa Retouching studio</title>
+<link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Roboto:400,300,500,900" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/theme.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/responsive.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/custom.css" type="text/css" media="all" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<body>
+	<header class="main_header">
+        <div class="header_wrapper">
+        	<div class="logo_sect">
+                <a href="index.html" class="logo"><img src="img/logo.png" alt=""  class="logo_def"><img src="img/retina/logo.png" alt="" class="logo_retina"></a>
+                <div class="slogan">Retouching studio</div>
+            </div>                       
+            <div class="header_rp">
+                <nav>
+                    <div class="menu-main-menu-container">
+                    	<ul id="menu-main-menu" class="menu">
+                            <li><a href="portfolio_masonry.html"><span>Portfolio</span></a></li>
+							<li><a href="before_after.html"><span>Before/After</span></a></li>
+							<li><a href="about.html"><span>About</span></a></li>
+                            <li><a href="mailto:mail@misoaretouching.com?subject=Contact from site"><span>Contact us</span></a></li>
+                        </ul>
+                    </div>
+                </nav>            
+            </div>
+            <div class="clear"></div>
+        </div>
+    </header>
+    
+    <div class="fs_fadder hided"></div>
+	<div class="fs_sharing_wrapper hided"> 
+		<div class="fs_sharing">	
+			<a class="share_facebook" href="http://www.facebook.com/share.php?u=http://misoaretouching.com/&amp;t=Misoa Retouching Studio" title="Share on Facebook" rel="nofollow" target="_blank"><i class="stand_icon icon-facebook-square"></i></a>
+			
+			<a class="share_tweet" href="http://twitter.com/share?text=Misoa Retouching Studio&amp;url=http://misoaretouching.com/" title="Share on Twitter" rel="nofollow" target="_blank"><i class="stand_icon icon-twitter"></i></a>
+			
+            <a href="http://pinterest.com/pin/create/button/?url=http://misoaretouching.com/&amp;media=hhttp://misoaretouching.com/img/logo.png" class="share_pinterest" target="_blank"><i class="icon-pinterest"></i></a>                                                          
+           
+            <a href="https://plus.google.com/share?url=http://misoaretouching.com/" class="share_gplus" target="_blank"><i class="icon-google-plus-square"></i></a>
+            <a class="fs_share_close hided" href="javascript:void(0)"></a>
+        </div>
+    </div>       
+	<div class="content_bg"></div>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>    
+    <script type="text/javascript" src="js/modules.js"></script>
+	<script type="text/javascript" src="js/theme.js"></script>
+    <script>
+		gallery_set = [
+			{image: "img/gallery/slider/1_GOLD-0677_res2_var1_contrast.jpg", thmb: "img/gallery/slider/thumbs/1.jpg", alt: "Golden leaf", title: "Golden leaf", description: "Discover elegance of gold", titleColor: "#ffffff", descriptionColor: "#ffffff"},
+			{image: "img/gallery/slider/2_Sexy_Bed-1602_res2.jpg", thmb: "img/gallery/slider/thumbs/2.jpg", alt: "Charm of delicacy", title: "Charm of delicacy", description: "Discover tenderness in your soul", titleColor: "#ffffff", descriptionColor: "#ffffff"},			
+			{image: "img/gallery/slider/3_Bags_680-1_res.jpg", thmb: "img/gallery/slider/thumbs/3.jpg", alt: "Untold Story", title: "Untold Story", description: "Feel mysterious sophistication", titleColor: "#ffffff", descriptionColor: "#ffffff"},			
+			{image: "img/gallery/slider/4_1484_cold-cyan_brigtness+6.jpg", thmb: "img/gallery/slider/thumbs/4.jpg", alt: "Magic fairy tale", title: "Magic fairy tale", description: "Feel the Magic", titleColor: "#ffffff", descriptionColor: "#ffffff"}
+		]
+		
+		jQuery(document).ready(function(){
+			"use strict";
+			jQuery('html').addClass('hasPag');
+        //jQuery(window).resize (function(){jQuery('.my_fullscreen-gallery').height(window_h - header.height()-1);}  );//misoa height of block
+        jQuery(window).resize (function(){jQuery('.fs_gallery_wrapper').height(window_h - header.height()-1);}  );//misoa height of block
+        
+			jQuery('body').fs_gallery({
+				fx: 'fade', /*fade, zoom, slide_left, slide_right, slide_top, slide_bottom*/
+				fit: 'no_fit',
+				slide_time: 3300, /*This time must be < then time in css*/
+				autoplay: 1,
+				show_controls: 1,
+				slides: gallery_set
+			});
+			jQuery('.fs_share').click(function(){
+				jQuery('.fs_fadder').removeClass('hided');
+				jQuery('.fs_sharing_wrapper').removeClass('hided');
+				jQuery('.fs_share_close').removeClass('hided');
+			});
+			jQuery('.fs_share_close').click(function(){
+				jQuery('.fs_fadder').addClass('hided');
+				jQuery('.fs_sharing_wrapper').addClass('hided');
+				jQuery('.fs_share_close').addClass('hided');
+			});
+			jQuery('.fs_fadder').click(function(){
+				jQuery('.fs_fadder').addClass('hided');
+				jQuery('.fs_sharing_wrapper').addClass('hided');
+				jQuery('.fs_share_close').addClass('hided');
+			});
+			
+			jQuery('.close_controls').click(function(){
+				if (jQuery(this).hasClass('open_controls')) {
+					jQuery('.fs_controls').removeClass('hide_me');
+					jQuery('.fs_title_wrapper ').removeClass('hide_me');
+					jQuery('.fs_thmb_viewport').removeClass('hide_me');
+					jQuery('header.main_header').removeClass('hide_me');
+					jQuery(this).removeClass('open_controls');
+				} else {		
+					jQuery('header.main_header').addClass('hide_me');
+					jQuery('.fs_controls').addClass('hide_me');
+					jQuery('.fs_title_wrapper ').addClass('hide_me');
+					jQuery('.fs_thmb_viewport').addClass('hide_me');
+					jQuery(this).addClass('open_controls');
+				}
+			});
+			
+			jQuery('.main_header').removeClass('hided');
+			jQuery('html').addClass('without_border');	
+             jQuery('body').append('</div>');//misoa '<div class="my_fullscreen-gallery" style="position:relative;">'+   line29 fs_gallery.js
+		});
+	</script> 
+    <script type="text/javascript" src="js/fs_gallery.js"></script>
+</body>
+</html>
